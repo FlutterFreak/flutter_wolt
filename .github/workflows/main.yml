@@ -21,14 +21,16 @@ jobs:
       - name: Run tests
         run: flutter test --coverage
       - name: Upload coverage to codecov
-        run: curl -s https://codecov.io/bash
+        run: curl -Os https://uploader.codecov.io/latest/macos/codecov chmod +x codecov ./codecov
         shell: bash
       - name: Build Android
         run: flutter build apk --debug --split-per-abi
+      - name: Build Android App Bundle
+        run: flutter build appbundle
       - name: Create a Release APK
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "build/app/outputs/apk/debug/*.apk"
+          artifacts: "build/app/outputs/apk/release/*.apk,build/app/outputs/bundle/release/app-release.aab"
           token: ${{ secrets.PAT }}
-          commit: master
-          tag: v1.0
+          commit: ${{ github.sha }}
+          tag: ${{ steps.version.outputs.content }}
