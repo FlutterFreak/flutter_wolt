@@ -20,9 +20,8 @@ jobs:
         run: flutter analyze
       - name: Run tests
         run: flutter test --coverage
-      - name: Upload coverage to codecov
-        run: curl -Os https://uploader.codecov.io/latest/macos/codecov chmod +x codecov ./codecov
-        shell: bash
+      - name: Upload coverage reports to Codecov with GitHub Action
+        uses: codecov/codecov-action@v3
       - name: Build Android
         run: flutter build apk --debug --split-per-abi
       - name: Build Android App Bundle
