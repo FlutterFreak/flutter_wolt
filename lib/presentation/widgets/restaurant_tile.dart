@@ -26,8 +26,13 @@ class RestaurantTile extends StatelessWidget {
               return const CustomLoader();
             },
             errorBuilder: (context, error, stackTrace) {
-              return const Icon(
-                Icons.image,
+              return const SizedBox(
+                width: 80,
+                height: 150,
+                child: Icon(
+                  Icons.image,
+                  size: 40,
+                ),
               );
             },
             fit: BoxFit.fill,

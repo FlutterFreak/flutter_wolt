@@ -4,6 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_wolt_assignment/core/constants/strings.dart';
 // ignore: depend_on_referenced_packages
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 part 'network_exceptions.freezed.dart';
 
 @freezed
@@ -104,7 +105,7 @@ class NetworkExceptions with _$NetworkExceptions {
               break;
           }
         } else if (error is SocketException) {
-          networkExceptions = const NetworkExceptions.noInternetConnection();
+          networkExceptions = const NetworkExceptions.unableToProcess();
         } else {
           networkExceptions = const NetworkExceptions.unexpectedError();
         }
