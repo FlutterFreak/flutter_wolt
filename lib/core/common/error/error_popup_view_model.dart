@@ -25,11 +25,4 @@ class ErrorPopupViewModel with EquatableMixin {
           description: AppStrings.emptyString,
           okButtonLabel: AppStrings.okButtonLabel,
         );
-
-  ErrorPopupViewModel.noInternet()
-      : this(
-          title: AppStrings.noInternetHeader,
-          description: AppStrings.noInternet,
-          okButtonLabel: AppStrings.okButtonLabel,
-        );
 }

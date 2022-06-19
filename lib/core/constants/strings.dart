@@ -6,6 +6,8 @@ class AppStrings {
   static const String okButtonLabel = "Ok";
   static const String cancelButtonLabel = "Cancel";
   static const String error = "Error";
+  static const String lat = "lat";
+  static const String long = "lon";
 
   // Network exception errors
   static const String invalidStatusCode = "Received invalid status code";

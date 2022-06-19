@@ -7,8 +7,11 @@ import 'package:flutter_wolt_assignment/domain/entity/restaurant_info.dart';
 
 import 'fixture_reader.dart';
 
+Map<String, dynamic> restaurantsByLocation =
+    json.decode(fixture('json_data.json'));
+
 RestaurantsByLocation restaurantsByLocationModel =
-    RestaurantsByLocation.fromJson(json.decode(fixture('json_data.json')));
+    RestaurantsByLocation.fromJson(restaurantsByLocation);
 
 RestaurantInfo restaurantInfo = RestaurantInfo(
     id: "5ae6013cf78b5a000bb64022",
@@ -17,10 +20,5 @@ RestaurantInfo restaurantInfo = RestaurantInfo(
     url:
         "https://prod-wolt-venue-images-cdn.wolt.com/5ae6013cf78b5a000bb64022/bc80c9c4-9ead-11eb-9441-4efedaea1730_mcd_wolt_etusivu_1010x544.png",
     isFavorite: false);
-
-DioError dioError = DioError(
-    requestOptions: RequestOptions(path: "", baseUrl: AppStrings.baseUrl),
-    type: DioErrorType.connectTimeout,
-    error: AppStrings.connectionTimeout);
-
-String unexpectedError = AppStrings.unexpectedError;
+RequestOptions requestOptions =
+    RequestOptions(path: "", baseUrl: AppStrings.baseUrl);

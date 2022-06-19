@@ -10,10 +10,4 @@ class RestaurantsListViewModel with EquatableMixin {
   List<Object?> get props => [restaurantsList];
 
   RestaurantsListViewModel.initialized() : this(restaurantsList: []);
-
-  RestaurantsListViewModel copyWith({List<RestaurantInfo>? restaurantsList}) {
-    return RestaurantsListViewModel(
-      restaurantsList: restaurantsList ?? this.restaurantsList,
-    );
-  }
 }

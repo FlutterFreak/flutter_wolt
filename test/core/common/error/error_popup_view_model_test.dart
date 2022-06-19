@@ -9,14 +9,13 @@ void main() {
     expect(data.description, AppStrings.emptyString);
     expect(data.okButtonLabel, AppStrings.okButtonLabel);
   });
-  test('ErrorPopupViewModel no internet constructor', () {
-    var data = ErrorPopupViewModel.noInternet();
-    expect(data.title, AppStrings.noInternetHeader);
-    expect(data.description, AppStrings.noInternet);
-  });
 
   test('ErrorPopupViewModel instance equality', () {
-    var data = ErrorPopupViewModel.initialized();
+    var data = const ErrorPopupViewModel(
+        title: AppStrings.error, description: AppStrings.unexpectedError);
     expect(data.props.length, 3);
+    expect(data.title, AppStrings.error);
+    expect(data.description, AppStrings.unexpectedError);
+    expect(data.okButtonLabel, AppStrings.okButtonLabel);
   });
 }

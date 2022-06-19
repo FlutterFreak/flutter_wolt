@@ -5,5 +5,7 @@ void main() {
   test('Coordinates instance equality', () {
     var data = Coordinates(0, 0);
     expect(data.props.length, 2);
+    expect(data.lat, 0);
+    expect(data.long, 0);
   });
 }

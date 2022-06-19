@@ -36,8 +36,10 @@ void main() {
   });
 
   testWidgets('Error dialog test when no internet', (tester) async {
-    when(repository.getRestaurantsList(any, any))
-        .thenAnswer((_) async => Right(ErrorPopupViewModel.noInternet()));
+    when(repository.getRestaurantsList(any, any)).thenAnswer((_) async =>
+        const Right(ErrorPopupViewModel(
+            title: AppStrings.noInternetHeader,
+            description: AppStrings.noInternet)));
 
     await buildAndPump(const Home(), repository, tester);
     await tester.pump(const Duration(milliseconds: 10));
