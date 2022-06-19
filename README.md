@@ -1,7 +1,7 @@
 # flutter_wolt_assignment
 This repository contains the frontend code for the Flutter wolt  assignment app. The app is coded in flutter and is set to build android and iOS mobile versions.
 
-![img.png](img.png)
+![Screenshot](screenshot_wolt_homepage.png)
 
 This app is built with following configuration: 
 
